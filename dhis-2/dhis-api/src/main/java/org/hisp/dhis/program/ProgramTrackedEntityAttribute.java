@@ -37,6 +37,7 @@ import org.hisp.dhis.common.DxfNamespaces;
 import org.hisp.dhis.common.EmbeddedObject;
 import org.hisp.dhis.common.ValueType;
 import org.hisp.dhis.trackedentity.TrackedEntityAttribute;
+import org.hisp.dhis.trackedentity.TrackedEntityAttributeSearchScope;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -63,6 +64,8 @@ public class ProgramTrackedEntityAttribute
     private Boolean renderOptionsAsRadio = false;
 
     private Set<ProgramTrackedEntityAttributeGroup> groups = new HashSet<>();
+    
+    private TrackedEntityAttributeSearchScope searchScope;
 
     // -------------------------------------------------------------------------
     // Constructors
@@ -268,4 +271,15 @@ public class ProgramTrackedEntityAttribute
     {
         this.renderOptionsAsRadio = renderOptionsAsRadio;
     }
+
+    @JsonProperty
+    @JacksonXmlProperty( namespace = DxfNamespaces.DXF_2_0 )
+	public TrackedEntityAttributeSearchScope getSearchScope() {
+		return searchScope;
+	}
+
+	public void setSearchScope(TrackedEntityAttributeSearchScope searchScope) {
+		this.searchScope = searchScope;
+	}    
+    
 }

@@ -28,6 +28,14 @@
     <property name="allowFutureDate" column="allowFutureDate" />
     
     <property name="renderOptionsAsRadio" column="renderoptionsasradio" />
+    
+    <property name="searchScope" length="40" column="searchscope">
+      <type name="org.hibernate.type.EnumType">
+        <param name="enumClass">org.hisp.dhis.trackedentity.TrackedEntityAttributeSearchScope</param>
+        <param name="useNamed">true</param>
+        <param name="type">12</param>
+      </type>
+    </property>
 
     <set name="groups" table="programtrackedentityattributegroupmembers" >
       <cache usage="read-write" />
